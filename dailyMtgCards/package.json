@@ -1,0 +1,21 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel src/index.js -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "aws-sdk": "^2.494.0",
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.5.5"
+  }
+}
