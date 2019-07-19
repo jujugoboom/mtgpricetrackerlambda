@@ -1,6 +1,5 @@
 import axios from 'axios';
 import aws from 'aws-sdk';
-import config from '../config.json';
 const BASE_URL = 'https://api.scryfall.com/cards?page=';
 const STREAM_NAME = 'mtgpricetrackerstream';
 
@@ -14,7 +13,7 @@ async function handler(event){
         }
         let resp = await axios.get(BASE_URL + i);
         let data = resp.data.data;
-        let formatted = data.map(c => ({set_code    : c.set, name: c.name, prices: c.prices, lang: c.lang})).map(j => JSON.stringify(j)).join('')
+        let formatted = data.map(c => ({setCode: c.set, name: c.name, prices: c.prices, lang: c.lang})).map(j => JSON.stringify(j)).join('')
         let params = {
             Record: {
                 Data: formatted
